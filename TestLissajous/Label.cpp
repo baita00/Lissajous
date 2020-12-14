@@ -116,7 +116,7 @@ CLabel& CLabel::SetBkColor(COLORREF crBkgnd)
 
 CLabel& CLabel::SetFontName(const CString& strFont)
 {	
-	strcpy(m_lf.lfFaceName,strFont);
+	_tcscpy(m_lf.lfFaceName,strFont);
 	ReconstructFont();
 	RedrawWindow();
 	return *this;
@@ -216,7 +216,7 @@ void CLabel::OnTimer(UINT nIDEvent)
 	{
 		case Text:
 			if (m_bState)
-				SetWindowText("");
+				SetWindowText(_T(""));
 			else
 				SetWindowText(m_strText);
 		break;
@@ -247,7 +247,7 @@ void CLabel::OnLButtonDown(UINT nFlags, CPoint point)
 	CString strLink;
 
 	GetWindowText(strLink);
-	ShellExecute(NULL,"open",strLink,NULL,NULL,SW_SHOWNORMAL);
+	ShellExecute(NULL,_T("open"),strLink,NULL,NULL,SW_SHOWNORMAL);
 		
 	CStatic::OnLButtonDown(nFlags, point);
 }

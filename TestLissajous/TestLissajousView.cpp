@@ -129,7 +129,7 @@ int CTestLissajousView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	m_chartWnd.Attach(m_hWnd, kTypeXY);
 	m_chartWnd.GetChart()->SetOptimalXExtend(true);
 	m_chartWnd.GetChart()->SetOptimalYExtend(true);
-	m_chartWnd.GetChart()->SetTitle("李萨如图形");
+	m_chartWnd.GetChart()->SetTitle(_T("李萨如图形"));
 	CreateLissajous();
 
 	m_chartWnd.GetChart()->SetDefMainString(_T("基于CChart的李萨如图形绘制工具"));
